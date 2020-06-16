@@ -2,10 +2,11 @@ class Snake {
   constructor() {
     this.row = HEIGHT / 2;
     this.col = WIDTH / 2;
+    this.body = this.row + this.col
     this.speed = 1
     this.direction="N"
-    // this.total = 0 
-    // this.tail =
+    this.section = 0 
+    this.tail = 0
   }
   preload() {
     this.img = loadImage("graphics/snakepiece.svg");
@@ -38,6 +39,7 @@ class Snake {
     this.direction="E"
     }
   }
+
   eat (position) {
     let d = dist(this.row, this.col, position.row, position.col)
     console.log(d,"d");
@@ -45,6 +47,13 @@ class Snake {
       return true
     }
   }
+
+  grow() {
+  	let head = this.body[this.body.length-1].copy();
+    this.tail++;
+    this.body.push(head);
+  }
+
   keys() {
     if (keyCode === 37) {
       this.moveLeft();
@@ -76,6 +85,7 @@ class Snake {
       this.col+=SQUARE_SIDE
 
     }
+
 
     this.row = constrain(this.row, 0, height-25)
     this.col = constrain(this.col, 0, width-25)
