@@ -1,5 +1,3 @@
-console.log("game");
-
 class Game {
   constructor() {}
   drawGrid() {
