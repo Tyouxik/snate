@@ -1,17 +1,17 @@
 html {
- background-image: url('../graphics/zoomNOKEY.svg');
+    background-image: url('../graphics/zoomNOKEY.svg');
+    /* background-image: url('../graphics/zoomNOKEY.svg'); */
 
     height: 100%;
-
-        display: flex;
-      
-        /* This centers our sketch horizontally. */
-      justify-content: center;
-        /* This centers our sketch vertically. */
-        align-items: center;
-      
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+#startImg {
+ 
+  width: 100%;
+
+ } 

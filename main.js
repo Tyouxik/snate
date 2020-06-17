@@ -23,9 +23,11 @@ function draw() {
   console.log(start)
   if (start === 0){
     console.log("starting 0 stsrts")
+    document.getElementById("defaultCanvas0").style.display= "none"
 
   }
   else if(start ===1){
+    document.getElementById("defaultCanvas0").style.display=""
     console.log("vive")
   game.drawGrid();
   background('#B2BD08');

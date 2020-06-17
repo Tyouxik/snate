@@ -126,6 +126,7 @@ class Snake {
       })
     })
     if(this.col<0||this.col>WIDTH-25||this.row<0||this.row>HEIGHT-25){
+      console.log("chocaste")
       setTimeout(function(){ addStart(),loop() }, 1000);
       noLoop()
       
