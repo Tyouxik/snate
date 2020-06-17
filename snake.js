@@ -90,7 +90,7 @@ class Snake {
 
     }
   }
-  
+ 
   draw() {
     // console.log(this.tail,{row:this.row,col:this.col})
 
@@ -105,22 +105,31 @@ class Snake {
     if(this.tail.length){
       this.tail[this.tail.length - 1] = {...this}
     }
-    
+  
     this.update(this)
-    this.row = constrain(this.row, 0, height-25)
-    this.col = constrain(this.col, 0, width-25)
+    // this.row = constrain(this.row, 0, height-25)
+    // this.col = constrain(this.col, 0, width-25)
     image(this.img, this.col, this.row, SQUARE_SIDE, SQUARE_SIDE);
     this.tail.forEach((elem,index)=>{
       image(elem.img, elem.col, elem.row, SQUARE_SIDE, SQUARE_SIDE);
       this.tail.find((item,ind) => {
         if(item.col === elem.col && item.row == elem.row && index !== ind) {
           console.log("now you can die");
-          game.died=true;
+          setTimeout(function(){ addStart(),loop(); }, 1000);
+          noLoop()
+          loop()
           
-          return;
+          // game.died=true;
+          //noLoop()
+          //return;
         }
       })
     })
+    if(this.col<0||this.col>WIDTH-25||this.row<0||this.row>HEIGHT-25){
+      setTimeout(function(){ addStart(),loop() }, 1000);
+      noLoop()
+      
+      }
     
   }
 }
