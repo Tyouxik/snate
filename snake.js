@@ -104,7 +104,6 @@ class Snake {
       };
     } 
     this.update(this)
-
    /*  if(this.tail.length){
       this.tail[this.tail.length - 1] = {...this}
     } */
@@ -122,10 +121,7 @@ class Snake {
 
          setTimeout(function(){ addStart(),loop(); }, 1000);
           noLoop()
-          
-          // game.died=true;
-          //noLoop()
-          //return;
+
         }
       })
     })

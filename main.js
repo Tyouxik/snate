@@ -16,27 +16,40 @@ function preload() {
 function setup() {
   createCanvas(WIDTH, HEIGHT);
 
-  frameRate(7) 
+  frameRate(8) 
 
   gameoverimg = loadImage("graphics/overscreen.svg")
 
 }
 
 function draw() {
+  document.querySelector("#banana").innerText="Score: "+score
   console.log(start)
   if (start === 0){
     console.log("starting 0 stsrts")
     document.getElementById("defaultCanvas0").style.display= "none"
-    // document.getElementById("overscreen").style.display="none"
     document.getElementById("startscreen").style.display=""
+    document.getElementById("banana").style.display="none"
 
   }
   else if(start ===1){
     if (score > 3){
-      frameRate(20) 
+      frameRate(10) 
+    } if (score > 6) {
+      frameRate(13)
+    } if (score > 8) {
+      frameRate(18)
+    } if (score > 12) { 
+      frameRate(24)
+    } if (score > 16) {
+      frameRate(28)
+    } if (score > 20) {
+      frameRate(30)
     }
+  
     document.getElementById("defaultCanvas0").style.display=""
     document.getElementById("startscreen").style.display="none"
+    document.getElementById("banana").style.display=""
     // document.body.style.backgroundImage = "url('../graphics/zoomNOKEY.svg')" ;
     console.log("vive")
   game.drawGrid();
@@ -51,11 +64,9 @@ function draw() {
 }
  
 else if (start > 1){
-  console.log("muesrto")
   clear()
-
   background('#B2BD08');
-  image(gameoverimg, WIDTH/4, HEIGHT/4)
+  image(gameoverimg, 115, 150)
   game.drawGrid();
 }
 

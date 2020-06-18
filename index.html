@@ -7,11 +7,14 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
       </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Space+Mono:wght@700&display=swap');
+      </style>
     <title>Document</title>
   </head>
   <body >
    
-    
+    <h3 id="banana">Score: 0</h3>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
     <script defer src=https://cdn.JsDelivr.net/npm/p5/lib/addons/p5.sound.min.js></script>
     <script defer src=https://cdn.JsDelivr.net/npm/p5/lib/addons/p5.dom.min.js></script>
@@ -35,10 +38,10 @@
       <script>
         function myFunction() {
           let x = document.getElementById("aboutphone");
-          if (x.style.visibility == "hidden") {
-            x.style.visibility = "visible";
-          } else {
+          if (x.style.visibility == "visible") {
             x.style.visibility = "hidden";
+          } else {
+            x.style.visibility = "visible";
           }
         }
         </script>

@@ -1,6 +1,6 @@
 html {
     /* background-image: ""; */
-    background-image: url('../graphics/zoomNOKEY.svg');
+    background-image: url('graphics/playwindow.svg');
 
     height: 100%;
     display: flex;
@@ -75,6 +75,7 @@ button {
   border-radius: 20px;
   color: #4F565E;
   position: absolute;
+  outline: none;
 }
 
 .logobutton {
@@ -95,4 +96,12 @@ button {
 #overscreen {
   z-index: 5;
   position: relative;
+}
+
+#banana {
+  font-family: Roboto Mono;
+  font-weight: 700;
+  color:  #B2BD08;
+
+  
 }
