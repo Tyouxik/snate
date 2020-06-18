@@ -3,6 +3,7 @@ let snake = new Snake();
 let fruit = new Fruit();
 let score = 0
 let start = 0
+let gameoverimg
 function addStart(){
 
   start++}
@@ -15,7 +16,9 @@ function preload() {
 function setup() {
   createCanvas(WIDTH, HEIGHT);
 
-  frameRate(10) 
+  frameRate(7) 
+
+  gameoverimg = loadImage("graphics/overscreen.svg")
 
 }
 
@@ -24,11 +27,16 @@ function draw() {
   if (start === 0){
     console.log("starting 0 stsrts")
     document.getElementById("defaultCanvas0").style.display= "none"
-    document.getElementById("overscreen").style.display="none"
+    // document.getElementById("overscreen").style.display="none"
+    document.getElementById("startscreen").style.display=""
 
   }
   else if(start ===1){
+    if (score > 3){
+      frameRate(20) 
+    }
     document.getElementById("defaultCanvas0").style.display=""
+    document.getElementById("startscreen").style.display="none"
     // document.body.style.backgroundImage = "url('../graphics/zoomNOKEY.svg')" ;
     console.log("vive")
   game.drawGrid();
@@ -45,8 +53,9 @@ function draw() {
 else if (start > 1){
   console.log("muesrto")
   clear()
+
   background('#B2BD08');
-  document.getElementById("overscreen").style.display=""
+  image(gameoverimg, WIDTH/4, HEIGHT/4)
   game.drawGrid();
 }
 

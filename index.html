@@ -25,9 +25,7 @@
         <div><img src="graphics/title-SNAKE2020.svg" class="logo"></div>
         <div><button onclick="myFunction()"> ABOUT THIS PHONE </button></div>
       </div>
-      <img src="graphics/overscreen.svg" id=overscreen>
       <img src="graphics/LANDING.svg" id="startImg" class="floating">
-      <!-- <div class="divbutton"><button onclick="myFunction()"> ABOUT THIS PHONE </button></div> -->
 
       <div class="objects">
         <p id="aboutphone">One of the most successful phones pre-smartphone, the Nokia 3310 was released in 2000 and became one of the best-selling for the Finnish company. Sturdy, reliable and with a long-lasting battery, 3310 came with the T9 writing technology, a 84x84 monochromatic display and few evergreen games, most notably, Snake 2. Nokia released a new 3310 in 2017, a revived version of the icon targeted as low-end.</p>
@@ -37,8 +35,8 @@
       <script>
         function myFunction() {
           let x = document.getElementById("aboutphone");
-          if (x.style.visibility === "hidden") {
-            x.style.visibility = "";
+          if (x.style.visibility == "hidden") {
+            x.style.visibility = "visible";
           } else {
             x.style.visibility = "hidden";
           }

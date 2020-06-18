@@ -56,7 +56,7 @@ class Snake {
     let d = dist(this.row, this.col, position.row, position.col)
     if (d < 1) {
       console.log(this.tail,"d");
-      this.tail.push(this)
+      this.total++
     
       return true
     }
@@ -94,30 +94,34 @@ class Snake {
   draw() {
     // console.log(this.tail,{row:this.row,col:this.col})
 
-   
+
      for (let i = 0; i < this.tail.length - 1; i++) {
       this.tail[i] = this.tail[i + 1];
     } 
-    /* if (this.total >= 1) {
+
+    if (this.total >= 1) {
       this.tail[this.total - 1] = {row:this.row,col:this.col,img:this.img
       };
-    } */
-    if(this.tail.length){
-      this.tail[this.tail.length - 1] = {...this}
-    }
-  
+    } 
     this.update(this)
+
+   /*  if(this.tail.length){
+      this.tail[this.tail.length - 1] = {...this}
+    } */
+  
     // this.row = constrain(this.row, 0, height-25)
     // this.col = constrain(this.col, 0, width-25)
     image(this.img, this.col, this.row, SQUARE_SIDE, SQUARE_SIDE);
     this.tail.forEach((elem,index)=>{
       image(elem.img, elem.col, elem.row, SQUARE_SIDE, SQUARE_SIDE);
       this.tail.find((item,ind) => {
-        if(item.col === elem.col && item.row == elem.row && index !== ind) {
+        if(item.col === this.col && item.row === this.row && index !== ind) {
+         
           console.log("now you can die");
-          setTimeout(function(){ addStart(),loop(); }, 1000);
+          console.log(this.row,this.col,this.tail)
+
+         setTimeout(function(){ addStart(),loop(); }, 1000);
           noLoop()
-          loop()
           
           // game.died=true;
           //noLoop()
@@ -127,7 +131,7 @@ class Snake {
     })
     if(this.col<0||this.col>WIDTH-25||this.row<0||this.row>HEIGHT-25){
       console.log("chocaste")
-      setTimeout(function(){ addStart(),loop() }, 1000);
+     setTimeout(function(){ addStart(),loop() }, 1000);
       noLoop()
       
       }

@@ -2,7 +2,7 @@ html {
     /* background-image: ""; */
     background-image: url('../graphics/zoomNOKEY.svg');
 
-    height: 110%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,6 @@ html {
 .logo {
   padding-left: 20px;
 }
-
 
 .floating{
   position: absolute;
@@ -37,11 +36,6 @@ html {
     align-items: center;
 
  }
- /* .extra {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
- } */
 
  p {
   color: whitesmoke;
@@ -94,3 +88,11 @@ button {
 	align-content: stretch;
 }
 
+#aboutphone {
+  visibility: hidden;
+}
+
+#overscreen {
+  z-index: 5;
+  position: relative;
+}
