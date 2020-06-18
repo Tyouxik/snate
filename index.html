@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+      </style>
     <title>Document</title>
   </head>
   <body >
@@ -17,6 +20,30 @@
     <script src="snake.js"></script>
     <script src="game.js"></script>
     <script src="main.js"></script>
-    <div ><img src="graphics/LANDING.svg" id="startImg" ></div>
-   </body>
+    <section id="startscreen">
+      <div class="logobutton">
+        <div><img src="graphics/title-SNAKE2020.svg" class="logo"></div>
+        <div><button onclick="myFunction()"> ABOUT THIS PHONE </button></div>
+      </div>
+      <img src="graphics/overscreen.svg" id=overscreen>
+      <img src="graphics/LANDING.svg" id="startImg" class="floating">
+      <!-- <div class="divbutton"><button onclick="myFunction()"> ABOUT THIS PHONE </button></div> -->
+
+      <div class="objects">
+        <p id="aboutphone">One of the most successful phones pre-smartphone, the Nokia 3310 was released in 2000 and became one of the best-selling for the Finnish company. Sturdy, reliable and with a long-lasting battery, 3310 came with the T9 writing technology, a 84x84 monochromatic display and few evergreen games, most notably, Snake 2. Nokia released a new 3310 in 2017, a revived version of the icon targeted as low-end.</p>
+        <p></p>
+        <p class="p1">Snake first appeared in 1997 on the Nokia 6110. It was programmed by Taneli Armanto, a design engineer in Nokia. The concept originated from the 1976 arcade game ‘Blockade’, developed and published by Gremlin.</p></div>
+
+      <script>
+        function myFunction() {
+          let x = document.getElementById("aboutphone");
+          if (x.style.visibility === "hidden") {
+            x.style.visibility = "";
+          } else {
+            x.style.visibility = "hidden";
+          }
+        }
+        </script>
+    </section>
+    </body>
 </html>

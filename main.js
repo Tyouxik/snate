@@ -24,10 +24,12 @@ function draw() {
   if (start === 0){
     console.log("starting 0 stsrts")
     document.getElementById("defaultCanvas0").style.display= "none"
+    document.getElementById("overscreen").style.display="none"
 
   }
   else if(start ===1){
     document.getElementById("defaultCanvas0").style.display=""
+    // document.body.style.backgroundImage = "url('../graphics/zoomNOKEY.svg')" ;
     console.log("vive")
   game.drawGrid();
   background('#B2BD08');
@@ -44,6 +46,7 @@ else if (start > 1){
   console.log("muesrto")
   clear()
   background('#B2BD08');
+  document.getElementById("overscreen").style.display=""
   game.drawGrid();
 }
 
