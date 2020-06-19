@@ -1,5 +1,6 @@
 html{
     /* background-image: ""; */
+    background-color: #4F565E;
     background-image: url('graphics/playwindow.svg');
     height: 100%;
     display: flex;

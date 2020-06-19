@@ -24,9 +24,9 @@ function setup() {
 
 function draw() {
   document.querySelector("#banana").innerText="Score: "+score
-  console.log(start)
   if (start === 0){
     console.log("starting 0 stsrts")
+    document.querySelector('html').style.backgroundImage = "none"
     document.getElementById("defaultCanvas0").style.display= "none"
     document.getElementById("startscreen").style.display=""
     document.getElementById("banana").style.display="none"
@@ -46,7 +46,7 @@ function draw() {
     } if (score > 20) {
       frameRate(30)
     }
-  
+    document.querySelector('html').style.backgroundImage = "url('graphics/playwindow.svg')"
     document.getElementById("defaultCanvas0").style.display=""
     document.getElementById("startscreen").style.display="none"
     document.getElementById("banana").style.display=""
@@ -80,6 +80,8 @@ function keyPressed() {
   }
   if(keyCode === 32 && start > 1){
     window.location.reload()
+    console.log(" here");
+    start = 1
     
    
   }
